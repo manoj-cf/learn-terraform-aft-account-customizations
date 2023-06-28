@@ -8,13 +8,14 @@ data "aws_ssoadmin_instances" "ssoadmininst" {}
 
 data "aws_identitystore_group" "s3opsgroup" {
   identity_store_id = tolist(data.aws_ssoadmin_instances.ssoadmininst.identity_store_ids)[0]
-
-  alternate_identifier {
-    unique_attribute {
-      attribute_path  = "DisplayName"
-      attribute_value = "AWSLogArchiveViewers"
-    }
-  }
+  
+  display_name      = "AWSLogArchiveViewers"
+  # alternate_identifier {
+  #   unique_attribute {
+  #     attribute_path  = "DisplayName"
+  #     attribute_value = "AWSLogArchiveViewers"
+  #   }
+  # }
 }
 
 output "group_id" {
