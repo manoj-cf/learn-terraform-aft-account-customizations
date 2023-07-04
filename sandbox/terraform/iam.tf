@@ -23,7 +23,7 @@ resource "aws_iam_group" "sys_analysts" {
 }
 
 resource "aws_iam_user_group_membership" "IT_Membership" {
- user = data.aws_caller_identity.current.user_id.name
+ user = data.aws_caller_identity.current.user_id
  groups = [
    aws_iam_group.sys_analysts.name
  ]
