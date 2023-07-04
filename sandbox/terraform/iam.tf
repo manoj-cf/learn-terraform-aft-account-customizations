@@ -1,4 +1,4 @@
-data "aws_caller_identity" "current" {}
+#data "aws_caller_identity" "current" {}
 
 resource "aws_iam_group_policy" "s3_policy" {
   name  = "s3_policy"
